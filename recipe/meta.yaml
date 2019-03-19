@@ -1,8 +1,8 @@
 {% set name = "topika" %}
-{% set version = "0.1.3" %}
+{% set version = "0.2.0" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "42cb85751517f18ff0b93cae652a1699aba72eb9cefac88dba8862918160da96" %}
+{% set hash_value = "de094627f979f1f8af18687dd74be3d06b04c18412bc83154029486610708a1d" %}
 
 package:
   name: '{{ name|lower }}'
@@ -14,7 +14,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
