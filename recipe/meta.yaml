@@ -1,28 +1,21 @@
-{% set name = "topika" %}
 {% set version = "0.2.0" %}
-{% set file_ext = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "de094627f979f1f8af18687dd74be3d06b04c18412bc83154029486610708a1d" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: topika
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
-  '{{ hash_type }}': '{{ hash_value }}'
+  url: https://pypi.io/packages/source/t/topika/topika-{{ version }}.tar.gz
+  sha256: de094627f979f1f8af18687dd74be3d06b04c18412bc83154029486610708a1d
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [py > 37]
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - python
     - pip
-    - setuptools
   run:
     - python
     - tornado >=4.0,<6.0
@@ -31,22 +24,22 @@ requirements:
     - shortuuid
     - six
     - furl
-    - typing  # [py < 35]
-    - enum34  # [py < 34]
-    - singledispatch  # [py < 34]
-    - mock  # [py < 33]
-    - backports.tempfile  # [py < 32]
+    - typing  # [py<35]
+    - enum34  # [py<34]
+    - singledispatch  # [py<34]
+    - mock  # [py<33]
+    - backports.tempfile  # [py<32]
 
 test:
   imports:
     - topika
 
 about:
-  home: https://github.com/muhrin/topika.git
-  license: Apache
+  home: https://github.com/muhrin/topika
+  license: Apache-2.0
   license_family: APACHE
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: A python remote communications library
+  license_file: LICENSE
+  summary: "A python remote communications library"
 
 extra:
   recipe-maintainers: 
