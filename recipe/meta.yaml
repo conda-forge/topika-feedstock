@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: topika
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/topika/topika-{{ version }}.tar.gz
-  sha256: de094627f979f1f8af18687dd74be3d06b04c18412bc83154029486610708a1d
+  sha256: d73284f34152c687868da188a0fe6ec3ea7ef9c57a8ff1971fa8803f7da9d9f8
 
 build:
   number: 0
