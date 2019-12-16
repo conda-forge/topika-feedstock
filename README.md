@@ -1,7 +1,7 @@
 About topika
 ============
 
-Home: https://github.com/muhrin/topika
+Home: https://github.com/aiidateam/topika.git
 
 Package license: Apache-2.0
 
@@ -220,4 +220,5 @@ Feedstock Maintainers
 
 * [@ltalirz](https://github.com/ltalirz/)
 * [@muhrin](https://github.com/muhrin/)
+* [@sphuber](https://github.com/sphuber/)
 
