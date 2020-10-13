@@ -9,6 +9,7 @@ source:
   sha256: d73284f34152c687868da188a0fe6ec3ea7ef9c57a8ff1971fa8803f7da9d9f8
 
 build:
+  noarch: python
   number: 4
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -23,11 +24,6 @@ requirements:
     - shortuuid
     - six
     - furl
-    - typing  # [py < 35]
-    - enum34  # [py < 34]
-    - singledispatch  # [py < 34]
-    - mock  # [py < 33]
-    - backports.tempfile  # [py < 32]
     - future
 
 test:
