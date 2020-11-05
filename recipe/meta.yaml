@@ -1,4 +1,4 @@
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: topika
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/topika/topika-{{ version }}.tar.gz
-  sha256: d73284f34152c687868da188a0fe6ec3ea7ef9c57a8ff1971fa8803f7da9d9f8
+  sha256: 1be58468850e149e80289cd78cfbdbfd6ff33a8b05d0b119fdbbbee0bb7426c8
 
 build:
   noarch: python
-  number: 4
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -38,7 +38,7 @@ about:
   summary: "A python remote communications library"
 
 extra:
-  recipe-maintainers: 
+  recipe-maintainers:
   - ltalirz
   - muhrin
   - sphuber
