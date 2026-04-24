@@ -5,20 +5,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/topika/topika-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/t/topika/topika-{{ version }}.tar.gz
   sha256: 1be58468850e149e80289cd78cfbdbfd6ff33a8b05d0b119fdbbbee0bb7426c8
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - tornado >=4.0,<6.0
     - pika >=1.0.0
     - shortuuid
@@ -27,6 +27,8 @@ requirements:
     - future
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - topika
 
